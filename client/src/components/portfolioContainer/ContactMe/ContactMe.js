@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Typical from 'react-typical'
 import axios from 'axios'
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 import imgBack from '../../../../src/images/mailz.jpeg'
 import load1 from '../../../images/load2.gif'
 import ScreenHeading from '../../../utilities/ScreenHeading/ScreenHeading'
@@ -17,9 +17,9 @@ export default function ContactMe(props) {
     Animations.animations.fadeInScreen(props.id);
   };
 
-  const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+  const fadeInSubscription = ScrollService.CurrentScreenFadeIn.subscribe(fadeInScreenHandler);
 
-  const [name, setName ] = useState("")
+  const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const [banner, setBanner] = useState("")
@@ -28,7 +28,7 @@ export default function ContactMe(props) {
   const handleName = (e) => {
     setName(e.target.value);
   };
-  
+
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -37,24 +37,24 @@ export default function ContactMe(props) {
     setMessage(e.target.value);
   };
 
-  console.log(name);
+  // console.log(name);
 
   const submitForm = async (e) => {
     e.preventDefault();
     try {
-      let data ={
-      name,
-      email,
-      message,
+      let data = {
+        name,
+        email,
+        message,
       };
 
       setBool(true)
       const res = await axios.post('/contact', data);
-      if(name.length=== 0 || email.length === 0 || message.length === 0){
+      if (name.length === 0 || email.length === 0 || message.length === 0) {
         setBanner(res.data.msg)
         toast.error(res.data.msg)
         setBool(false)
-      } else if(res.status===200){
+      } else if (res.status === 200) {
         setBanner(res.data.ms)
         toast.success(res.data.msg)
         setBool(false)
@@ -73,31 +73,31 @@ export default function ContactMe(props) {
         <div className='col'>
 
           <h2 className='title'>
-            <Typical 
+            <Typical
               loop={Infinity}
               steps={[
                 "Get in Touch",
                 1000,
               ]}
-            
+
             />
           </h2>
 
           <a href="https://www.facebook.com/Delmondpro">
-                <i className='fa fa-facebook-square'></i>
-              </a>
-              <a href="https://www.youtube.com/delmond/">
-                <i className='fa fa-youtube-square'></i>
-              </a>
-              <a href="https://www.twitter.com/delmond">
-                <i className='fa fa-twitter-square'></i>
-              </a>
-              <a href="https://www.linkedin.com/delmond">
-                <i className='fa fa-linkedin-square'></i>
-              </a>
-              <a href="https://www.github.com/delmond147">
-                <i className='fa fa-github-square'></i>
-              </a>
+            <i className='fa fa-facebook-square'></i>
+          </a>
+          <a href="https://www.youtube.com/delmond/">
+            <i className='fa fa-youtube-square'></i>
+          </a>
+          <a href="https://www.twitter.com/delmond">
+            <i className='fa fa-twitter-square'></i>
+          </a>
+          <a href="https://www.linkedin.com/delmond">
+            <i className='fa fa-linkedin-square'></i>
+          </a>
+          <a href="https://www.github.com/delmond147">
+            <i className='fa fa-github-square'></i>
+          </a>
         </div>
 
         <div className='back-form'>
@@ -112,7 +112,7 @@ export default function ContactMe(props) {
             <input type='text' onChange={handleName} value={name} />
 
             <label htmlFor='email'>Email</label>
-            <input type='email'  onChange={handleEmail} value={email}/>
+            <input type='email' onChange={handleEmail} value={email} />
 
             <label htmlFor='message'>Message</label>
             <textarea type='text' onChange={handleMessage} value={message} />
@@ -120,9 +120,9 @@ export default function ContactMe(props) {
             <div className='send-btn'>
               <button type='submit'>
                 send<i className='fa fa-paper-plain' />
-                {bool?(<b className='load'>
+                {bool ? (<b className='load'>
                   <img src={load1} alt='not responding' />
-                </b>): ("")}
+                </b>) : ("")}
               </button>
             </div>
           </form>

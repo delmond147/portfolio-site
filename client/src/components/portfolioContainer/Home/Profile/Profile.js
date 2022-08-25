@@ -38,28 +38,28 @@ const Profile = () => {
             <span className='primary-text'>
               {" "}
               <h1>
-              {" "}
+                {" "}
                 <Typical
                   loop={Infinity}
                   steps={[
-                    "Ethusiastic Developer 🔴",
-                    1000,
-                    "Full Stack Developer 💻 ",
-                    1000,
+                    "MERN Stack Developer 🔴",
+                    2600,
                     "Machine Learning Engineer 🌍",
-                    1000,
-                    "Deep learning Engineer 🚕",
-                    1000,
-                    "Cross Platform Developer 🌐",
-                    1000,
-                    "Python Developer 😎",
-                    1000,
-                    "JavaScript Developer 📱",
-                    1000,
-                    "Java Developer 😎",
-                    1000,
-                    "VR/AR/ER Engineer 😃",
-                    1000,
+                    2600,
+                    "JavaScript Developer 🔴😎",
+                    2600,
+                    "React Developer 💻",
+                    2600,
+                    "React Native Developer 📱",
+                    2600,
+                    "Flutter Developer 📱",
+                    2600,
+                    "Python Developer 🔴😎",
+                    2600,
+                    "VR/AR/ER Enthusiast 😃",
+                    2600,
+                    "IoT Enthusiast 🚕",
+                    2600,
                   ]}
                 />
               </h1>
@@ -70,8 +70,8 @@ const Profile = () => {
             </span>
           </div>
           <div className='profile-options'>
-            <button className='btn primary-btn' 
-            onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
+            <button className='btn primary-btn'
+              onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
             >Hire Me</button>
             <a href='mycv.pdf' download='Delmond mycv.pdf'>
               <button className='btn highlighted-btn'>Get Resume</button>
