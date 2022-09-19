@@ -2,17 +2,16 @@ import React from "react";
 import ScreenHeading from "../../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../../utilities/ScrollService";
 import Animations from "../../../utilities/Animations";
-import './AboutMe.css';
-
+import "./AboutMe.css";
 
 export default function AboutMe(props) {
   let fadeInScreenHandler = (screen) => {
-    if (screen.fadeInScreen !== props.id)
-      return
+    if (screen.fadeInScreen !== props.id) return;
     Animations.animations.fadeInScreen(props.id);
   };
 
-  const fadeInSubscription = ScrollService.CurrentScreenFadeIn.subscribe(fadeInScreenHandler)
+  const fadeInSubscription =
+    ScrollService.CurrentScreenFadeIn.subscribe(fadeInScreenHandler);
 
   const SCREEN_CONSTANTS = {
     description:
@@ -30,7 +29,7 @@ export default function AboutMe(props) {
 
       heading: "Here are a Few Highlights!",
     },
-  }
+  };
 
   const renderHighlights = () => {
     SCREEN_CONSTANTS.highlights.bullets.map((value, i) => (
@@ -39,11 +38,14 @@ export default function AboutMe(props) {
           <span>{value}</span>
         </div>
       </div>
-    ))
-  }
+    ));
+  };
 
   return (
-    <div className="about-me-container screen-container fade-in" id={props.id || ""}>
+    <div
+      className="about-me-container screen-container fade-in"
+      id={props.id || ""}
+    >
       <div className="about-me-parent">
         <ScreenHeading title={"About Me"} subHeading={"Why Choose Me?"} />
         <div className="about-me-card">
@@ -59,8 +61,12 @@ export default function AboutMe(props) {
                 {renderHighlights()}
               </div>
               <div className="about-me-options">
-                <button className="btn primary-btn"
-                  onClick={() => ScrollService.scrollHandler.scrollToHireMe()}>Hire Me</button>
+                <button
+                  className="btn primary-btn"
+                  onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
+                >
+                  Hire Me
+                </button>
                 <a href="mycv.pdf" download="Delmond mycv.pdf">
                   <button className="btn highlighted-btn">Get Resume</button>
                 </a>

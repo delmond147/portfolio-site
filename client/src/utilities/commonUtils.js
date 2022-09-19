@@ -1,7 +1,7 @@
 import ContactMe from '../components/portfolioContainer/ContactMe/ContactMe';
 import Home from '../components/portfolioContainer/Home/Home'
 import AboutMe from '../components/portfolioContainer/AboutMe/AboutMe'
-import Resume from '../components/portfolioContainer/Resume/Resume'
+import { Resume } from '../components/portfolioContainer/Resume/Resume'
 import Testimonial from '../components/portfolioContainer/Testimonial/Testimonial';
 
 export const TOTAL_SCREENS = [
